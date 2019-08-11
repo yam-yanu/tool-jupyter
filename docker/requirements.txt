@@ -1,0 +1,2 @@
+PyAthena==1.4.6
+td-client==0.12.0

@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  jupyter:
+    build:
+      context: ./docker
+      dockerfile: ./jupyter/Dockerfile
+      args:
+        - PASSWORD=${JUPYTER_PASSWORD}
+    volumes:
+      - ./work:/var/www/work
+      - ~/.aws:/root/.aws
+    environment:
+      - TD_API_KEY=${TD_API_KEY}
+    ports:
+      - 8888:8888
